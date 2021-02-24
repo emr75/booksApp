@@ -28,12 +28,14 @@ namespace booksApp.Controllers
                 {
                     Models.Book book = new Models.Book();
                     book.Id = b.GetElementsByTagName("id")[0].InnerText;
+                    //Attempt at ID
+                    string oz = book.Id;
+                    int theId = int.Parse(oz);
+                    book.Id = theId;
                     book.Title = b.GetElementsByTagName("title")[0].InnerText;
                     book.FirstName = b.GetElementsByTagName("firstname")[0].InnerText;
                     book.MiddleName = b.GetElementsByTagName("middlename")[0].InnerText;
                     book.LastName = b.GetElementsByTagName("lastname")[0].InnerText;
-
-
 
                     bookList.Add(book);
                 }
